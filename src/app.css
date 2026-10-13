@@ -85,3 +85,35 @@ hr {
   border: 1px solid #007cc3;
   padding: 10px;
 }
+
+select {
+  background-color: white;
+  color: #007cc3;
+  border: 1px solid #007cc3;
+  height: 30px;
+  padding: 4px;
+  margin: 2px;
+  min-width: 160px;
+  cursor: pointer;
+}
+
+select:hover {
+  opacity: 0.5;
+}
+
+select:focus {
+  outline: 2px solid #007cc3;
+  outline-offset: 1px;
+}
+
+select:disabled {
+  border: 1px solid #fff;
+  background-color: #e0e0e0;
+  color: #666666;
+  cursor: default;
+}
+
+option {
+  background-color: white;
+  color: #007cc3;
+}
