@@ -12,9 +12,12 @@ function App() {
   };
 
   const removeTodo = (indexToDelete) => {
+    // Iteriert über den ganzen Array und vergleicht für jedes Element den Index (i) mit dem Index vom Funktionsaufruf im EventHandler
+    // Nur Elemente mit einem anderen Index als das geklickte Element werden übernommen - dadurch wird das geklickte Element entfernt (gefiltert)
     const remainingTodos = todos.filter(
-      (todo, index) => index !== indexToDelete,
-    );
+      (todo, index) => indexToDelete !== index,
+    ); // !== "ungleich"
+    // Der neue Array mit den gefilterten Elementen wird in State gespeichert.
     setTodos(remainingTodos);
   };
 
@@ -39,6 +42,7 @@ function App() {
             <li key={index}>
               <div className="todo">
                 <p>{todo}</p>
+                {/* index ist der index aus der .map() Funktion - die Position des Elements im Array. Dieser ist eindeutig und wird zur Identifikation des Elements verwendet */}
                 <button onClick={() => removeTodo(index)}> Löschen</button>
               </div>
             </li>
